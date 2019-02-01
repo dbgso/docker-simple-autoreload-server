@@ -1,7 +1,8 @@
 FROM alpine:latest
 
-RUN apk add --no-cache nodejs yarn
-RUN yarn global add simple-autoreload-server
+RUN apk add --no-cache nodejs yarn && \
+    yarn global add simple-autoreload-server && \
+    yarn cache clean
 
 VOLUME [ "/data" ]
 WORKDIR /data
