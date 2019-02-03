@@ -1,0 +1,63 @@
+:toc:
+:nofooter:
+:source-highlighter: coderay
+:doctype: article
+
+:sas: simple-autoreload-server
+:links: link:https://www.npmjs.com/package/simple-autoreload-server[simple-autoreload-server]
+
+= README
+
+
+== Introduction
+
+Dockerfile to build a {links}
+
+== Quick Start
+
+[source, bash]
+----
+docker run --rm -it -v $PWD/data:/data -p 18080:8080 dbgso/simple-autoreload-server
+----
+
+Open `http://localhost:18080` with your browser. +
+
+
+== Configuration
+
+You can use Command Line Options for {sas} , using option for docker run.
+
+For link:https://www.npmjs.com/package/simple-autoreload-server#example-1[Example1]
+
+[source, bash]
+----
+docker run --rm -it -v $PWD/data:/data -p 18080:8080 dbgso/simple-autoreload-server -w "**/**.{html,css,js}" ./site-files 8008
+----
+
+For details, please refer to the following link.
+
+{links}
+
+=== Data Store
+
+This image's working direcotry is `/data`. +
+So you have to mount host directory to `/data` with `VOLUME` option.
+
+
+If you want to mount `./data` directory, set option like this.
+
+[source, bash]
+----
+-v $PWD/data:/data
+----
+
+=== Port Number
+
+This image using `8080` port.
+
+If you want to mount port `18080`, set option like this.
+
+[source, bash]
+----
+ -p 18080:8080
+----
