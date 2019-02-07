@@ -17,7 +17,7 @@ Dockerfile to build a {links}
 
 [source, bash]
 ----
-docker run --rm -it -v $PWD/data:/data -p 18080:8080 dbgso/simple-autoreload-server
+docker run --rm -it -v $PWD/data:/data -p 18080:8080 dbgso/autoreloadserver
 ----
 
 Open `http://localhost:18080` with your browser. +
